@@ -12,14 +12,16 @@ public class ExercicioFinal {
         dataNasc.set(1976, Calendar.OCTOBER,28);
 
         Calendar dataParaComparar = Calendar.getInstance();
-        dataParaComparar.set(2010, Calendar.APRIL,15);
+        dataParaComparar.set(2010, Calendar.MAY,15);
+        Long millisNascimento = dataNasc.getTimeInMillis();
+        Long millisDataParaComparar = dataParaComparar.getTimeInMillis();
 
-        System.out.println("timeInMillis do meu nascimento " + dataNasc.getTimeInMillis());
+        System.out.println("timeInMillis do meu nascimento " + millisNascimento);
 
         //Converte em umbjeto data
-        Date nascimento = new Date(dataNasc.getTimeInMillis());
+        Date nascimento = new Date(millisNascimento);
         SimpleDateFormat sdfNasc = new SimpleDateFormat("dd/MM/yyyy");
-        Date compara = new Date(dataParaComparar.getTimeInMillis());
+        Date compara = new Date(millisDataParaComparar);
         SimpleDateFormat sdfCompara = new SimpleDateFormat("dd/MM/yyyy");
 
         System.out.println("Data do nascimento: " + sdfNasc.format(nascimento));
