@@ -3,23 +3,22 @@ package aulas.trabalhandoComDatas.javaDate;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
+
 
 public class ExercicioFinal {
     public static void main(String[] args) {
         //Descubra o timeInMillis do dia que você nasceu;
         Calendar dataNasc = Calendar.getInstance();
-        dataNasc.set(1976,10,28);
+        dataNasc.set(1976, Calendar.OCTOBER,28);
 
         Calendar dataParaComparar = Calendar.getInstance();
-        dataParaComparar.set(2010,04,15);
+        dataParaComparar.set(2010, Calendar.APRIL,15);
 
         System.out.println("timeInMillis do meu nascimento " + dataNasc.getTimeInMillis());
 
         //Converte em umbjeto data
         Date nascimento = new Date(dataNasc.getTimeInMillis());
         SimpleDateFormat sdfNasc = new SimpleDateFormat("dd/MM/yyyy");
-        Date compData = new Date(dataParaComparar.getTimeInMillis());
         Date compara = new Date(dataParaComparar.getTimeInMillis());
         SimpleDateFormat sdfCompara = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -31,8 +30,5 @@ public class ExercicioFinal {
         } else {
             System.out.println("Data de nascimento é posterior a " + sdfCompara.format(compara));
         }
-
-
-
     }
 }
