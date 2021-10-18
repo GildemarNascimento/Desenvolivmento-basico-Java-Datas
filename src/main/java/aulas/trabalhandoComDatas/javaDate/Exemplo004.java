@@ -21,16 +21,14 @@ public class Exemplo004 {
 
         /** Comparando uma data com a outra */
         int compareCase1 = dataNoPassado.compareTo(dataNoFuturo); //passado -> futuro
-
         int compareCase2 = dataNoFuturo.compareTo(dataNoPassado); //futuro -> passado
-
         int compareCase3 = dataNoFuturo.compareTo(mesmaDataNoFuturo); //datas equivalentes
 
-        System.out.println(compareCase1); // -1
+        System.out.println("Passado/Futuro " +compareCase1); // -1
 
-        System.out.println(compareCase2); // 1
+        System.out.println("Futuro/Passado " + compareCase2); // 1
 
-        System.out.println(compareCase3); // 0
+        System.out.println("Datas equivalentes " + compareCase3); // 0
 
     }
 }

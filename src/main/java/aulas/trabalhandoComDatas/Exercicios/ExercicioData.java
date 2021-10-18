@@ -1,11 +1,12 @@
-package aulas.trabalhandoComDatas.javaDate;
+package aulas.trabalhandoComDatas.Exercicios;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
 
 
-public class ExercicioFinal {
+public class ExercicioData {
     public static void main(String[] args) {
         //Descubra o timeInMillis do dia que você nasceu;
         Calendar dataNasc = Calendar.getInstance();
@@ -19,18 +20,16 @@ public class ExercicioFinal {
         System.out.println("timeInMillis do meu nascimento " + millisNascimento);
 
         //Converte em umbjeto data
-        Date nascimento = new Date(millisNascimento);
-        SimpleDateFormat sdfNasc = new SimpleDateFormat("dd/MM/yyyy");
-        Date compara = new Date(millisDataParaComparar);
-        SimpleDateFormat sdfCompara = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.println("Data do nascimento: " + sdfNasc.format(nascimento));
+        Instant nascimento = dataNasc.toInstant();
+        Instant  comparaData = dataParaComparar.toInstant();
+
+        System.out.println("Data do nascimento: " + nascimento);
 
         //Verificar se data é anterior ou posterior a 15/05/2021.
-        if (dataNasc.before(dataParaComparar)){
-            System.out.println("Data de nascimento é anterior a  " + sdfCompara.format(compara));
-        } else {
-            System.out.println("Data de nascimento é posterior a " + sdfCompara.format(compara));
+        if (dataNasc.before(dataParaComparar)) System.out.println("Data de nascimento é anterior a  " + comparaData);
+        else {
+            System.out.println("Data de nascimento é posterior a " + comparaData);
         }
     }
 }
